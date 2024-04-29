@@ -1,0 +1,50 @@
+{
+  "node_modules/bootstrap-icons/font/fonts/bootstrap-icons.woff": {
+    "file": "assets/bootstrap-icons-bb1de989.woff",
+    "src": "node_modules/bootstrap-icons/font/fonts/bootstrap-icons.woff"
+  },
+  "node_modules/bootstrap-icons/font/fonts/bootstrap-icons.woff2": {
+    "file": "assets/bootstrap-icons-476adf42.woff2",
+    "src": "node_modules/bootstrap-icons/font/fonts/bootstrap-icons.woff2"
+  },
+  "public/fonts/thesalvador-condensed-webfont.woff": {
+    "file": "assets/thesalvador-condensed-webfont-6fe6f890.woff",
+    "src": "public/fonts/thesalvador-condensed-webfont.woff"
+  },
+  "public/fonts/thesalvador-condensed-webfont.woff2": {
+    "file": "assets/thesalvador-condensed-webfont-9d68007a.woff2",
+    "src": "public/fonts/thesalvador-condensed-webfont.woff2"
+  },
+  "resources/js/app.css": {
+    "file": "assets/app-9b588ab0.css",
+    "src": "resources/js/app.css"
+  },
+  "resources/js/app.js": {
+    "assets": [
+      "assets/bootstrap-icons-476adf42.woff2",
+      "assets/bootstrap-icons-bb1de989.woff"
+    ],
+    "css": [
+      "assets/app-9b588ab0.css",
+      "assets/app-fbb1492d.css"
+    ],
+    "file": "assets/app-2a88bb63.js",
+    "isEntry": true,
+    "src": "resources/js/app.js"
+  },
+  "resources/sass/app.scss": {
+    "file": "assets/app-fbb1492d.css",
+    "isEntry": true,
+    "src": "resources/sass/app.scss"
+  },
+  "resources/sass/dashboard.scss": {
+    "file": "assets/dashboard-78c49ddc.css",
+    "isEntry": true,
+    "src": "resources/sass/dashboard.scss"
+  },
+  "resources/sass/eilinger.scss": {
+    "file": "assets/eilinger-3a3dafb2.css",
+    "isEntry": true,
+    "src": "resources/sass/eilinger.scss"
+  }
+}
