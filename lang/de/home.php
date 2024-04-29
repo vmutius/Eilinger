@@ -2,7 +2,7 @@
 
 return [
     'home' => 'Home',
-    'about' => 'über uns',
+    'about' => 'Über uns',
     'lang' => 'Sprache',
     'funding' => 'Förderbereich',
     'overview' => 'überblick',
