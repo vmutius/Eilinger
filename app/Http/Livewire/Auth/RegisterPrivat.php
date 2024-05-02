@@ -11,6 +11,7 @@ use App\View\Components\Layout\Eilinger;
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Lang;
+use Illuminate\Support\Facades\Log;
 use Illuminate\Validation\Rules\Password;
 use Livewire\Component;
 
@@ -121,6 +122,7 @@ class RegisterPrivat extends Component
 
     public function render()
     {
+        Log::info(base_path(env('MYSQL_ATTR_SSL_CA')));
         $countries = Country::all();
 
         return view('livewire.auth.register_privat', compact('countries'))
