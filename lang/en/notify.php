@@ -17,5 +17,10 @@ return [
     'two_factor_line2' => 'The code will expire in 10 minutes',
     'two_factor_line3' => 'If you have not tried to login, ignore this message.',
     'regards' => 'Regards',
+    'verify' => 'Verify Email Address',
+    'verify_line1' => 'Please click the button below to verify your email address.',
+    'verify_line2' => 'If you did not create an account, no further action is required.',
+    'verify_action' => 'Verify Email',
+
     'browser_action' => "If you're having trouble clicking the \":actionText\" button, copy and paste the URL below into your web browser:",
 ];

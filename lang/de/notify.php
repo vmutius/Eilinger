@@ -17,5 +17,9 @@ return [
     'two_factor_line2' => 'Der Code läuft in 10 Minuten ab.',
     'two_factor_line3' => 'Wenn Sie nicht versucht haben, sich anzumelden, ignorieren Sie diese Meldung.',
     'regards' => 'Mit freundlichen Grüssen',
+    'verify' => 'Bestätigen Sie Ihre Email Adresse',
+    'verify_line1' => 'Bitte klicken Sie auf die Schaltfläche unten, um Ihre E-Mail-Adresse zu bestätigen.',
+    'verify_line2' => 'Wenn Sie kein Konto erstellt haben, sind keine weiteren Schritte erforderlich.',
+    'verify_action' => 'Email Adresse bestätigen',
     'browser_action' => "Wenn Sie Probleme haben, auf die Schaltfläche \":actionText\" zu klicken, kopieren Sie die folgende URL und fügen Sie sie in Ihren Webbrowser ein.",
 ];
