@@ -5,10 +5,9 @@
         <section id="contact" class="contact">
             <div class="container">
                 <div class="section-title">
-                    <h2>Validierung Ihrer Email Adresse</h2>
-                    <p>Um Ihren Account verwenden zu können, müssen Sie Ihre Email Adresse bestätigen.</p>
-                    <p>Eine Mail ist an Ihre Email Adresse gesendet worden. Bitte klicken Sie auf den Verifikationslink in der Mail.</p>
-                    <p>Vielen Dank</p>
+                    <h2>{{__('notice.verify')}}</h2>
+                    <p>{{__('notice.verify_line1')}}</p>
+                    <p>{{__('notice.verify_line2')}}</p>
                 </div>
 
 
@@ -19,7 +18,7 @@
 
                             <div>
                                 <x-primary-button>
-                                    {{ __('Verifikationslink erneut senden') }}
+                                    {{ __('notice.verify_resend') }}
                                 </x-primary-button>
                             </div>
                         </form>

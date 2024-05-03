@@ -58,6 +58,7 @@ class ResetPassword extends Notification implements ShouldQueue
     {
         return (new MailMessage)
             ->subject(__('notify.reset_password'))
+            ->greeting(__('notify.greeting'))
             ->line(__('notify.reset_password_line1'))
             ->action(__('notify.reset_password_action'), $url)
             ->line(__('notify.reset_password_line2',  ['count' => config('auth.passwords.'.config('auth.defaults.passwords').'.expire')]))

@@ -55,14 +55,14 @@
                             </button>
                         </div>
                         <div class="modal-body">
-                            {{  __('application.name')  }}:
+                            {{  __('application.name')  }}*:
                             <br />
                             <input wire:model="name" type="text" class="form-control" />
                             @error('name')
                                 <div style="font-size: 0.75rem; color: red">{{ $message }}</div>
                             @enderror
                             <br />
-                            {{  __('application.bereich')  }}
+                            {{  __('application.bereich')  }}*
                             <br />
 
                             <select wire:model.lazy="bereich" class="form-select" wire:change="updateBereich($event.target.value)">
@@ -76,7 +76,7 @@
                             @enderror
 
                             <br />
-                            {{  __('application.desiredForm')  }}:
+                            {{  __('application.desiredForm')  }}*:
                             <br />
 
                             <select wire:model.lazy="form" class="form-select">
@@ -91,7 +91,7 @@
                             @enderror
 
                             <br />
-                            {{  __('application.desiredCurrency')  }}:
+                            {{  __('application.desiredCurrency')  }}*:
                             <br />
                             <select wire:model.lazy="currency_id" class="form-select">
                                 <option selected value="">{{  __('attributes.please_select')  }}</option>
@@ -103,7 +103,7 @@
                                 <div style="font-size: 0.75rem; color: red">{{ $message }}</div>
                             @enderror
                             <br />
-                            {{  __('application.startDate')  }}:
+                            {{  __('application.startDate')  }}*:
                             <br />
                             <input wire:model="start_appl" type="date"  class="form-control" />
                             @error('start_appl')

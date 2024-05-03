@@ -39,6 +39,7 @@ class TwoFactorCode extends Notification implements ShouldQueue
     {
         return (new MailMessage)
             ->subject(__('notify.two_factor'))
+            ->greeting(__('notify.greeting'))
             ->line(__('notify.two_factor_line1', ['code' => $notifiable->two_factor_code]))
             ->action(__('notify.two_factor_action'), route('verify.index', app()->getLocale()))
             ->line(__('notify.two_factor_line2'))
