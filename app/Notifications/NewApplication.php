@@ -39,8 +39,8 @@ class NewApplication extends Notification implements ShouldQueue
         return (new MailMessage)
             ->subject(__('notify.new_appl'))
             ->greeting(__('notify.greeting'))
-            ->line("Es wurde ein neuer Antrag  {$this->application->name} eingereicht")
-            ->action('Zum Gesuch', route('admin_antrag', ['application_id' => $this->application->id, 'locale' => app()->getLocale()]));
+            ->line(__('notify.new_appl_line1', ['application' => $this->application->name ]))
+            ->action(__('notify.new_appl_action'), route('admin_antrag', ['application_id' => $this->application->id, 'locale' => app()->getLocale()]));
     }
 
     /**

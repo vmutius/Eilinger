@@ -35,9 +35,9 @@ class UserRegistered extends Notification
     {
         return (new MailMessage)
             ->greeting(__('notify.greeting'))
-            ->line('The introduction to the notification.')
-            ->action('Notification Action', url('/'))
-            ->line('Thank you for using our application!');
+            ->subject(__('notify.new_user'))
+            ->line(__('notify.new_user_line1', ['username' => $this->user->username]))
+            ->line(__('notify.new_user_line2', ['email' => $this->user->email]));
     }
 
     /**
@@ -48,7 +48,7 @@ class UserRegistered extends Notification
     public function toArray(object $notifiable): array
     {
         return [
-            //
+
         ];
     }
 }
