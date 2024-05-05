@@ -23,6 +23,7 @@ return [
     'verify_line1' => 'Please click the button below to verify your email address.',
     'verify_line2' => 'If you did not create an account, no further action is required.',
     'verify_action' => 'Verify Email',
+    'verify_button' => 'Verify',
     'reset_password' => 'Reset Password Notification',
     'reset_password_line1' => 'You are receiving this email because we received a password reset request for your account.',
     'reset_password_line2' => 'This password reset link will expire in :count minutes.',

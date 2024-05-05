@@ -25,9 +25,7 @@
 
                     <div class="row">
                         <div class="col-6">
-                            <x-primary-button>
-                                Verify
-                            </x-primary-button>
+                            <button type="submit" class="btn btn-colour-1"> {{ __('notify.verify_button') }}</button>
                         </div>
 
                     </div>

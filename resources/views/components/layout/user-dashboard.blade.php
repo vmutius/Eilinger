@@ -80,9 +80,9 @@
 
     </ul>
 </div>
-
-{{ $slot }}
-
+<div class="container mt-5">
+    {{ $slot }}
+</div>
 
 <script>
     let sidebar = document.querySelector(".sidebar");

@@ -23,6 +23,7 @@ return [
     'verify_line1' => 'Bitte klicken Sie auf die Schaltfläche unten, um Ihre E-Mail-Adresse zu bestätigen.',
     'verify_line2' => 'Wenn Sie kein Konto erstellt haben, sind keine weiteren Schritte erforderlich.',
     'verify_action' => 'Email Adresse bestätigen',
+    'verify_button' => 'Bestätigen',
     'reset_password' => 'Benachrichtigung zum Zurücksetzen des Passworts',
     'reset_password_line1' => 'Sie erhalten diese E-Mail, weil wir eine Anfrage zum Zurücksetzen des Passworts für Ihr Konto erhalten haben.',
     'reset_password_line2' => 'Dieser Link zum Zurücksetzen des Passworts läuft in :count minutes ab.',

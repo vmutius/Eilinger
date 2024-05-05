@@ -17,9 +17,7 @@
                             @csrf
 
                             <div>
-                                <x-primary-button>
-                                    {{ __('notice.verify_resend') }}
-                                </x-primary-button>
+                                <button type="submit" class="btn btn-colour-1"> {{ __('notice.verify_resend') }}</button>
                             </div>
                         </form>
                     </div>
@@ -29,9 +27,7 @@
                             @csrf
 
                             <div>
-                                <x-primary-button>
-                                    {{ __('Logout') }}
-                                </x-primary-button>
+                                <button type="submit" class="btn btn-colour-1">Logout</button>
                             </div>
                         </form>
                     </div>
