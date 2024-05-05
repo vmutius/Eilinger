@@ -15,7 +15,7 @@ return [
         for education. Additionally, they have actively addressed issues such as human rights violations, child labor, environmental pollution,
         and sustainability. Privately, they were involved in animal welfare. ',
     'philosophy_text2' => 'The focus of our support is on smaller associations, organizations, and individuals who do not receive or receive only
-        limited government or other financial aid and operate through donations and volunteer helpers. ',
+        limited government or other financial aid and operate through donation and volunteer helper. ',
     'purpose' => 'Foundation Purpose',
     'purpose_text' => 'The foundation aims to support the following institutions, organizations, and individuals through the provision of financial contribution',
     'purpose1' => 'Non-profit institutions and organizations operating in both domestic and/or foreign settings that are dedicated to the education and development of children, adolescents, and adults. This includes support for preschool and school education, as well as initiatives for vocational training, further education, or pursuing a degree;  ',
