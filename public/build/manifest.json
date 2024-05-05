@@ -32,6 +32,11 @@
     "isEntry": true,
     "src": "resources/js/app.js"
   },
+  "resources/js/eilinger.js": {
+    "file": "assets/eilinger-e3d6bf6c.js",
+    "isEntry": true,
+    "src": "resources/js/eilinger.js"
+  },
   "resources/sass/app.scss": {
     "file": "assets/app-fbb1492d.css",
     "isEntry": true,

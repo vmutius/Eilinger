@@ -14,6 +14,7 @@
 
     <!-- Scripts -->
     @vite(['resources/js/app.js'])
+    @vite(['resources/js/eilinger.js'])
     @vite(['resources/sass/eilinger.scss'])
     @livewireStyles()
 
