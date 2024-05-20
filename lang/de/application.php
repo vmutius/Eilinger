@@ -28,7 +28,7 @@ return [
     'start_appl' => 'Startdatum',
     'end_appl' => 'Enddatum',
     'no_applications' => 'Keine Anträge gefunden',
-    'reason_rejected' => 'Ablehngrund',
+    'reason_rejected' => 'Ablehnungsgrund',
     'appl_overview' => 'Antragsübersicht',
     'appl_overview_text' => 'Status Ausstehend, Warten auf Benutzer und Warten auf Ratssitzung',
     'proj_overview' => 'Projektübersicht',

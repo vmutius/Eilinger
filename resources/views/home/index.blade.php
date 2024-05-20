@@ -82,7 +82,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-6 offset-3 d-flex align-items-stretch mt-4">
+                    <div class="col-md-6 offset-md-3 d-flex align-items-stretch mt-4">
                         <div class="card" style='background-image: url("images/Menschen_4.jpg");'>
                             <div class="card-body">
                                 <h5 class="card-title"><a href="">{{ __('home.rights') }}</a></h5>
@@ -213,7 +213,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-sm-4 mb-3 offset-2 d-flex align-items-stretch">
+                    <div class="col-sm-4 mb-3 offset-md-2 d-flex align-items-stretch">
                         <div class="card border-light">
                             <div class="card-body d-flex flex-column">
                                 <h3 class="card-title">{{ __('home.environment') }} </h3>

@@ -38,7 +38,7 @@
                 <i class="bi bi-people-fill"></i>
                 <span class="links_name">Benutzerübersicht</span>
             </a>
-            <span class="tooltip">Benutzerübersich mit allen Anträgen </span>
+            <span class="tooltip">Benutzerübersicht mit allen Anträgen </span>
         </li>
         <li>
             <a href="{{ route('admin_applications', app()->getLocale()) }}">
