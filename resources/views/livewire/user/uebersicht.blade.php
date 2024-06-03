@@ -1,15 +1,13 @@
 <section class="home-section">
-    <div class="text">{{  __('userOverview.welcome')  }}</div>
+    <h2>{{  __('userOverview.welcome')  }}</h2>
 
     <div class="home-content">
         <div class="shadow p-3 mb-5 bg-body rounded">
-
-
             <section class="bg-light pt-5 pb-5 shadow-sm">
                 <div class="container">
                     <div class="row pt-5">
                         <div class="col-12">
-                            <h3 class="text-uppercase border-bottom mb-4">{{  __('userOverview.overview')  }}</h3>
+                            <h4 class="text-uppercase border-bottom mb-4">{{  __('userOverview.overview')  }}</h4>
                         </div>
                     </div>
 

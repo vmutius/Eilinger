@@ -59,10 +59,11 @@ return [
     'request_text4' => 'Non-profit institutions and organizations, as well as individuals, operating in both domestic and/or foreign settings, engaged in the field of animal welfare/animal rescue and/or activities aimed at the well-being of animals of all kinds. This includes explicit support for smaller entities such as associations; ',
     'request_text5' => 'Non-profit institutions and organizations, along with individuals or groups, operating in both domestic and/or foreign settings, dedicated to the protection of nature and/or the environment.',
     'request_disclaimer' => 'It is emphasized that the recipients have no legal claims to foundation benefits. The level of support depends on actual needs and internal funding criteria. ',
+    'request_meeting' => 'The meetings of the Board of Trustees take place quarterly at the end of February, May, August and November. Only applications submitted in full two weeks in advance will be considered.',
     'app_stip' => 'Application for a scholarship',
     'app_privat' => 'Application for private persons (except scholarships)',
     'app_org' => 'Application for associations or organizations',
     'to_portal' => 'To the application portal',
-    'desired_contact' => 'No postal or telephone contact desired. Please use the email address provided or the form on the website (preferred option) to contact us',
+    'desired_contact' => 'Only applications that have been submitted in full and on time via the website will be considered. Contact by post or telephone is explicitly not welcome and will not be answered or followed up by the Eilinger Foundation.',
     'links' => 'Useful links',
 ];

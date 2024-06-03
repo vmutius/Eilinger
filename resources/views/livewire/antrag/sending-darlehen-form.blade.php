@@ -7,7 +7,8 @@
             </div>
         </div>
     </div>
-    <table class="table table-striped" id="sortTable">
+    <div class="table-responsive">
+        <table class="table table-striped" id="sortTable">
         <thead>
         <tr>
             <th>{{ __('sending.step') }}</th>
@@ -97,4 +98,5 @@
         </tr>
         </tbody>
     </table>
+    </div>
 </div>

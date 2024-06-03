@@ -1,5 +1,5 @@
 <section class="home-section">
-    <div class="text">{{  __('application.applications')  }}</div>
+    <h2>{{  __('application.applications')  }}</h2>
 
     <div class="home-content">
         <div class="shadow p-3 mb-5 bg-body rounded">
@@ -10,7 +10,8 @@
             </div>
             <hr class="border border-dark opacity-50">
             <x-notification/>
-            <table class="table table-striped">
+            <div class="table-responsive">
+                <table class="table table-striped">
                 <thead>
                     <tr>
                         <th>{{  __('application.application')  }}</th>
@@ -41,6 +42,7 @@
                     @endforelse
                 </tbody>
             </table>
+            </div>
         </div>
 
         <div class="modal" @if ($showModal) style="display:block" @endif>

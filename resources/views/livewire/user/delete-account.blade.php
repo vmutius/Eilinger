@@ -1,5 +1,5 @@
 <section class="home-section">
-    <div class="text">{{  __('userDashboard.delAccount')  }}</div>
+    <h2>{{  __('userDashboard.delAccount')  }}</h2>
     <div class="home-content">
         <div class="shadow p-3 mb-5 bg-body rounded">
             <div class="row">

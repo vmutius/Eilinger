@@ -4,7 +4,8 @@
 
     <div class="content">
         <div class="shadow p-3 mb-5 bg-body rounded">
-            <table class="table table-striped">
+            <div class="table-responsive">
+                <table class="table table-striped">
                 <thead>
                     <tr>
                         <th>{{  __('application.name')  }}</th>
@@ -32,6 +33,7 @@
                     @endforelse
                 </tbody>
             </table>
+            </div>
             {{ $applications->links() }}
         </div>
     </div>

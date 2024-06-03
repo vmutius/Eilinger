@@ -1,5 +1,5 @@
 <section class="home-section">
-    <div class="text">{{  __('antrag.title')  }}</div>
+    <h2>{{  __('antrag.title')  }}</h2>
     <p>{{  __('antrag.text1')  }}: <a target='_blank' href="{{ route('index', app()->getLocale()) }}#our-values">{{ __('home.funding') }}</a>.</p>
     <p>{{  __('antrag.text2')  }} </p>
 

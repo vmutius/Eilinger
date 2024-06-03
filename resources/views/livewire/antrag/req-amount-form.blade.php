@@ -11,8 +11,8 @@
     <div class="row g-3">
 
         <x-notification/>
-
-        <table class="table table-striped">
+        <div class="table-responsive">
+            <table class="table table-striped">
             <thead>
             <tr>
                 <th class="text-center" scope="col"></th>
@@ -77,7 +77,7 @@
 
             </tbody>
         </table>
-
+        </div>
 
         <div class="col-md-12 text-center">
             <button type="submit" class="btn btn-success">

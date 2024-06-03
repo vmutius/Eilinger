@@ -9,102 +9,43 @@
     <meta name="keyword" content="">
     <title>Eilinger Stiftung - Dashboard</title>
 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     @vite(['resources/js/app.js'])
-    @vite(['resources/sass/dashboard.scss'])
+    <link href="{{ URL::asset('build/css/dashboard.min.css') }}" id="app-style" rel="stylesheet" type="text/css" />
     @livewireStyles()
 </head>
 
-<body>
-<!-- ======= Header ======= -->
-@include('components.layout.dash-header')
+<body  data-sidebar="dark" data-layout-mode="light">
+<div id="layout-wrapper">
+    @include('components.layout.topbar')
+    @include('components.layout.sidebar')
 
-<div class="sidebar">
-    <div class="logo-details">
-        <div class="logo_name">Eilinger Stiftung</div>
-        <i class="bi bi-list" id="btn"></i>
+    <div class="main-content">
+        <div class="page-content">
+            <div class="container-fluid">
+                {{ $slot }}
+            </div>
+        </div>
     </div>
-    <ul class="nav-list">
-        <li>
-            <a href="{{ route('user_dashboard', app()->getLocale()) }}">
-                <i class="bi bi-grid"></i>
-                <span class="links_name">{{  __('userDashboard.dashboard')  }}</span>
-            </a>
-            <span class="tooltip">{{  __('userDashboard.dashboard')  }}</span>
-        </li>
-        <li>
-            <a href="{{ route('user_antraege', app()->getLocale()) }}">
-                <i class="bi bi-envelope-open"></i>
-                <span class="links_name">{{  __('userDashboard.applications')  }}</span>
-            </a>
-            <span class="tooltip">{{  __('userDashboard.applicationsToolTip')  }}</span>
-        </li>
-        <li>
-            <a href="{{ route('user_gesuch', app()->getLocale()) }}">
-                <i class="bi bi-envelope-check"></i>
-                <span class="links_name">{{  __('userDashboard.requests')  }}</span>
-            </a>
-            <span class="tooltip">{{  __('userDashboard.requestsToolTip')  }}</span>
-        </li>
-        <li>
-            <a href="{{ route('user_nachrichten', app()->getLocale()) }}">
-                <i class="bi bi-chat-dots"></i>
-                <span class="links_name">{{  __('userDashboard.messages')  }}</span>
-            </a>
-            <span class="tooltip">{{  __('userDashboard.messagesToolTip')  }}</span>
-        </li>
-        <li>
-            <a href="{{ route('user_dateien', app()->getLocale()) }}">
-                <i class="bi bi-folder-plus"></i>
-                <span class="links_name">{{  __('userDashboard.files')  }}</span>
-            </a>
-            <span class="tooltip">{{  __('userDashboard.filesToolTip')  }}</span>
-        </li>
-        <li>
-            <a href="{{ route('user_profile.edit', app()->getLocale()) }}">
-                <i class="bi bi-person"></i>
-                <span class="links_name">{{  __('userDashboard.profile')  }}</span>
-            </a>
-            <span class="tooltip">{{  __('userDashboard.profileToolTip')  }}</span>
-        </li>
-
-        <li>
-            <a href="{{ route('user_delete', app()->getLocale()) }}">
-                <i class="bi bi-person-x"></i>
-                <span class="links_name">{{  __('userDashboard.delAccount')  }}</span>
-            </a>
-            <span class="tooltip">{{  __('userDashboard.delAccountToolTip')  }}</span>
-        </li>
-
-
-    </ul>
-</div>
-<div class="container mt-5">
-    {{ $slot }}
 </div>
 
 <script>
-    let sidebar = document.querySelector(".sidebar");
-    let closeBtn = document.querySelector("#btn");
-    let searchBtn = document.querySelector(".bx-search");
+    let sidebar = document.querySelector("#sidebar-menu");
+    let closeBtn = document.querySelector("#vertical-menu-btn");
+    let body = document.body;
 
-    closeBtn.addEventListener("click", () => {
-        sidebar.classList.toggle("open");
-        menuBtnChange(); //calling the function(optional)
+    closeBtn.addEventListener("click", function (event) {
+        event.preventDefault();
+        body.classList.toggle('sidebar-enable');
+        if (window.screen.availWidth >= 992) {
+            body.classList.toggle('vertical-collpsed');
+        } else {
+            body.classList.remove('vertical-collpsed');
+        }
     });
 
-    // following are the code to change sidebar button(optional)
-    function menuBtnChange() {
-        if (sidebar.classList.contains("open")) {
-            closeBtn.classList.replace("bx-menu", "bx-menu-alt-right"); //replacing the iocns class
-        } else {
-            closeBtn.classList.replace("bx-menu-alt-right", "bx-menu"); //replacing the iocns class
-        }
-    }
 </script>
-
 @livewireScripts()
+
 
 </body>
 

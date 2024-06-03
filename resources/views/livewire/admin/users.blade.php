@@ -22,7 +22,8 @@
                </div>  --}}
             </div>
             <hr class="border border-dark opacity-50">
-            <table class="table table-striped" id="sortTable">
+            <div class="table-responsive">
+                <table class="table table-striped" id="sortTable">
                 <thead>
                 <tr>
                     <th>Benutzername</th>
@@ -87,7 +88,8 @@
                                     <td><span
                                             class="badge text-bg-{{ $application->appl_status_context }}">{{ $application->appl_status }}</span>
                                     </td>
-                                    @if (!$loop->first) </tr> @endif
+                                    @if (!$loop->first)
+                                </tr> @endif
                                 @endforeach
 
                                 @endif
@@ -99,6 +101,7 @@
                                 @endforelse
                 </tbody>
             </table>
+            </div>
             Showing {{ $users->firstItem() }} to {{ $users->lastItem() }}
             of total {{ $users->total() }} entries {{ $users->links() }}
         </div>

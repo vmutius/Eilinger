@@ -60,10 +60,11 @@ return [
     'request_text4' => 'Im In- und/oder Ausland tätige nicht profitorientierte Institutionen und Organisationen und Einzelpersonen, die sich mit dem Thema Tierschutz/Tierrettung befassen und/oder deren Tätigkeit das Wohl von Tieren aller Art zum Ziel hat. Es sollen explizit auch kleinere Institutionen wie Vereine unterstützt werden; ',
     'request_text5' => 'Im In- und/oder Ausland tätige nicht profitorientierte Institutionen und Organisationen sowie Einzelpersonen oder Personengruppen, die sich für den Schutz von Natur und/oder Umwelt einsetzen.',
     'request_disclaimer' => 'Es wird darauf hingewiesen, dass die DestinatärInnen keine Rechtsansprüche auf Stiftungsleistungen haben. Die Höhe der Unterstützung richtet sich nach dem tatsächlichen Bedarf sowie internen Förderungskriterien. ',
+    'request_meeting' => 'Die Stiftungsratssitzungen finden quartalsweise auf Ende der Monate Februar, Mai, August und November statt. Nur Gesuche, welche 2 Wochen im Voraus vollständig eingereicht sind, werden berücksichtigt.',
     'app_stip' => 'Gesuch für ein Stipendium',
     'app_privat' => 'Gesuch für Privatpersonen (ausser Stipendien)',
     'app_org' => 'Gesuch für Vereine oder Organisationen',
     'to_portal' => 'Zum Gesuchsportal',
-    'desired_contact' => 'Keine postalische und telefonische Kontaktaufnahme erwünscht. Für Kontaktaufnahmen soll die angegebene Emailadresse oder das Formular auf der Webseite (bevorzugte Variante) verwendet werden.',
+    'desired_contact' => 'Nur Gesuche, die vollständig und fristgerecht über die Webseite eingereicht wurden, werden berücksichtigt. Postalische oder telefonische Kontaktaufnahme ist explizit nicht erwünscht und wird von der Eilinger Stifung nicht beantwortet oder weiterverfolgt.',
     'links' => 'Nützliche Links',
 ];

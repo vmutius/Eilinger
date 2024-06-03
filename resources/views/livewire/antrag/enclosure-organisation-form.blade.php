@@ -17,8 +17,8 @@
             <br/>
             <br/>
             <h4 class="mb-0">{{  __('enclosure.reqDocs')  }}</h4>
-
-            <table class="table table-striped">
+            <div class="table-responsive">
+                <table class="table table-striped">
                 <thead>
                 <tr>
                     <th scope="col">#</th>
@@ -179,6 +179,7 @@
                 </tr>
                 </tbody>
             </table>
+            </div>
 
         </div>
 

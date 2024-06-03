@@ -173,6 +173,8 @@
 
                     </ol>
                     <p>{{ __('home.request_disclaimer') }}</p>
+                    <br/>
+                    <p>{{ __('home.request_meeting') }}</p>
                 </div>
 
                 <div class="row">

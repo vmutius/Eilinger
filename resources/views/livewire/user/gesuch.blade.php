@@ -1,8 +1,9 @@
 <section class="home-section">
-    <div class="text">{{  __('application.requests')  }}</div>
+    <h2>{{  __('application.requests')  }}</h2>
     <div class="home-content">
         <div class="shadow p-3 mb-5 bg-body rounded">
-            <table class="table table-striped">
+            <div class="table-responsive">
+                <table class="table table-striped">
                 <thead>
                 <tr>
                     <th>{{  __('application.application')  }}</th>
@@ -37,6 +38,7 @@
                 @endforelse
                 </tbody>
             </table>
+            </div>
         </div>
     </div>
 </section>

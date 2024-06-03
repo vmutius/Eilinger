@@ -18,7 +18,8 @@
                 </address>
                 <br>
                 <h3>{{ __('dataprotection.categories') }}</h3>
-                <table class="table table-striped table-bordered">
+                <div class="table-responsive">
+                    <table class="table table-striped table-bordered">
                     <thead>
                     <tr>
                         <th scope="col">{{ __('dataprotection.category') }}</th>
@@ -77,13 +78,15 @@
                     </tr>
                     </tbody>
                 </table>
+                </div>
                 <br>
                 <h3>{{ __('dataprotection.data_transfer') }} </h3>
                 <p>{{ __('dataprotection.data_transfer_text') }} </p>
                 <br>
                 <h3>{{ __('dataprotection.cookies') }} </h3>
                 <p>{{ __('dataprotection.cookies_text') }} </p>
-                <table class="table table-striped table-bordered">
+                <div class="table-responsive">
+                    <table class="table table-striped table-bordered">
                     <thead>
                     <tr>
                         <th scope="col">{{ __('dataprotection.cookie_name') }}</th>
@@ -114,6 +117,7 @@
                     </tr>
                     </tbody>
                 </table>
+                </div>
                 <br>
                 <h3>{{ __('dataprotection.rights') }} </h3>
                 <p>{{ __('dataprotection.rights_text') }} </p>

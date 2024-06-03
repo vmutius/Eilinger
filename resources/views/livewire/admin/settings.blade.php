@@ -10,7 +10,8 @@
                 </div>
             </div>
             <hr class="border border-dark opacity-50">
-            <table class="table table-striped" id="sortTable">
+            <div class="table-responsive">
+                <table class="table table-striped" id="sortTable">
                 <thead>
                     <tr>
                         <th>Benutzername</th>
@@ -32,6 +33,7 @@
                     @endforeach
                 </tbody>
             </table>
+            </div>
         </div>
 
         <div class="modal" @if ($showModal) style="display:block" @endif>

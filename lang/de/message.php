@@ -6,7 +6,7 @@ return [
     'commented' => 'kommentierte zu',
     'newAppl' => 'Es wurde ein neuer Antrag',
     'submitted' => 'eingereicht',
-    'status' => 'Der Status ihres Geuchs',
+    'status' => 'Der Status ihres Gesuchs',
     'changed' => 'wurde geändert auf',
     'noMessages' => 'Keine Nachrichten vorhanden',
     'markAllRead' => 'Alle als gelesen markieren',

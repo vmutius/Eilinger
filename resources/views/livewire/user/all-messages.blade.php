@@ -1,5 +1,5 @@
 <section class="home-section">
-    <div class="text">{{  __('message.allMessagesTitle')  }}</div>
+    <h2>{{  __('message.allMessagesTitle')  }}</h2>
     <div class="content">
         <div class="shadow p-3 mb-5 bg-body rounded">
             <div class="content">

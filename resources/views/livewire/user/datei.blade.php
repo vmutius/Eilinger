@@ -10,7 +10,8 @@
             </div>
             <hr class="border border-dark opacity-50">
             <x-notification/>
-            <table class="table table-striped">
+            <div class="table-responsive">
+                <table class="table table-striped">
                 <thead>
                     <tr>
                         <th>{{  __('file.content')  }}</th>
@@ -53,6 +54,7 @@
                 @endforelse
                 </tbody>
             </table>
+            </div>
         </div>
 
         <div class="modal" @if ($showModal) style="display:block" @endif>
