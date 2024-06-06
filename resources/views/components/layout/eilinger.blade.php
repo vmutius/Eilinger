@@ -11,6 +11,10 @@
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
     <title>Eilinger Stiftung - @yield('title')</title>
+    <link rel="canonical" href="https://www.eilingerstiftung.ch/@yield('link')"/>
+    <link rel="alternate" hreflang="de" href="https://www.eilingerstiftung.ch/de/@yield('link')" />
+    <link rel="alternate" hreflang="en" href="https://www.eilingerstiftung.ch/en/@yield('link')" />
+    <link rel="alternate" hreflang="x-default" href="https://www.eilingerstiftung.ch/@yield('link')" />
 
     <!-- Scripts -->
     @vite(['resources/js/app.js'])

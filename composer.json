@@ -6,6 +6,7 @@
     "license": "MIT",
     "require": {
         "php": "^8.1",
+        "ext-pdo": "*",
         "guzzlehttp/guzzle": "^7.8.0",
         "laravel/framework": "^v10.41.0",
         "laravel/sanctum": "^v3.3.1",
@@ -13,7 +14,7 @@
         "laravel/ui": "^v4.4.0",
         "league/flysystem-aws-s3-v3": "^3.24",
         "livewire/livewire": "^2.12",
-        "ext-pdo": "*"
+        "spatie/laravel-sitemap": "^7.2"
     },
     "require-dev": {
         "barryvdh/laravel-debugbar": "^3.9",

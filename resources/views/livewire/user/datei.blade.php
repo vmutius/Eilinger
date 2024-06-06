@@ -1,5 +1,5 @@
 <section class="home-section">
-    <div class="text">{{  __('file.title')  }}</div>
+    <h2>{{  __('file.title')  }}</h2>
 
     <div class="home-content">
         <div class="shadow p-3 mb-5 bg-body rounded">

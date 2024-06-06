@@ -62,6 +62,27 @@
 
     ul {
         li {
+            position: relative;
+            margin: 8px 0;
+            list-style: none;
+
+            .tooltip {
+                position: absolute;
+                top: -20px;
+                left: calc(100% + 15px);
+                z-index: 3;
+                background: #fff;
+                box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+                padding: 6px 12px;
+                border-radius: 4px;
+                font-size: 0.9375rem;
+                font-weight: 400;
+                opacity: 0;
+                white-space: nowrap;
+                pointer-events: none;
+                transition: 0s;
+            }
+
             a {
                 display: flex;
                 padding: .625rem 1.5rem;
@@ -87,6 +108,15 @@
                 }
 
                 &:hover {
+
+                    .tooltip {
+                        opacity: 1;
+                        pointer-events: auto;
+                        transition: all 0.4s ease;
+                        top: 50%;
+                        transform: translateY(-50%);
+                    }
+
                     color: ghostwhite;
 
                     i {
@@ -183,11 +213,6 @@
                         border-radius: 12px;
                         align-items: center;
 
-                        i {
-                            font-size: 1.45rem;
-                            margin-left: 4px;
-                        }
-
                         span {
                             display: none;
                             padding-left: 25px;
@@ -198,7 +223,6 @@
                         > a {
                             position: relative;
                             width: calc(190px + #{$sidebar-collapsed-width});
-                            background-color: darken(white, 4%);
                             transition: none;
                             text-decoration: none;
 
@@ -311,7 +335,6 @@ body[data-sidebar="dark"] {
 
                         &:hover {
                             > a {
-                                background: lighten($main_color, 2%);
                                 color: ghostwhite;
                                 i{
                                     color: ghostwhite;

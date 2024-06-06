@@ -1,6 +1,7 @@
 <x-layout.eilinger>
 
 @section('title', __('impressum.title'))
+@section('link', 'impressum')
 
 <main id="main">
     <section id="about" class=about">

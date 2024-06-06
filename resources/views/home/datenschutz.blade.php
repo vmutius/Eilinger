@@ -1,6 +1,7 @@
 <x-layout.eilinger>
 
 @section('title', __('dataprotection.data-protection'))
+@section('link', 'datenschutz')
 
 <main id="main">
     <section id="about" class="about">

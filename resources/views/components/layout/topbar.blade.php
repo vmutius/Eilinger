@@ -3,14 +3,14 @@
         <div class="d-flex">
             <!-- LOGO -->
             <div class="navbar-brand-box">
-                <a href="#" class="logo">
+                <div class="logo">
                     <span class="logo-sm">
                         <img src="{{url('/images/logo_white.png')}}" alt="" height="25">
                     </span>
                     <span class="logo-lg">
-                        <img src="{{url('/images/logo_white.png')}}" alt="" height="17">
+                        Eilinger Stiftung
                     </span>
-                </a>
+                </div>
             </div>
 
             <button type="button" class="btn btn-sm px-3 font-size-16 header-item waves-effect" id="vertical-menu-btn">
