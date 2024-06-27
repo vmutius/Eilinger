@@ -23,13 +23,11 @@
                     </div>
 
                     <div class="col-md-6">
-                        <form method="POST" action="{{ route('logout', app()->getLocale()) }}">
-                            @csrf
-
-                            <div>
-                                <button type="submit" class="btn btn-colour-1">Logout</button>
-                            </div>
-                        </form>
+                        <div>
+                            <button class="btn btn-colour-1">
+                                <a class="nav-link" href="{{ route('logout', app()->getLocale()) }}">Logout</a>
+                            </button>
+                        </div>
                     </div>
                 </div>
             </div>
