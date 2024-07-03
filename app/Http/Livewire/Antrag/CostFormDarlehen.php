@@ -11,10 +11,10 @@ use Livewire\Component;
 class CostFormDarlehen extends Component
 {
     public $costs;
-
     public $currency_id;
-
     public $myCurrency;
+    public $getAmountCostDarlehen;
+
 
     protected $rules = [
         'costs.*.cost_name' => 'required',
