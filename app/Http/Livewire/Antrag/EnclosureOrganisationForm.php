@@ -45,6 +45,7 @@ class EnclosureOrganisationForm extends Component
             'enclosure.commercialRegisterExtractSendLater' => 'nullable',
             'enclosure.statuteSendLater' => 'nullable',
             'enclosure.activitySendLater' => 'nullable',
+            'enclosure.activityReportSendLater' => 'nullable',
             'enclosure.balanceSheetSendLater' => 'nullable',
             'enclosure.taxAssessmentSendLater' => 'nullable',
             'enclosure.costReceiptsSendLater' => 'nullable',

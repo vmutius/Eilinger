@@ -28,6 +28,7 @@ class UserNatForm extends Component
             'user.civil_status' => ['required', new Enum(CivilStatus::class)],
             'user.phone' => 'sometimes',
             'user.mobile' => 'sometimes',
+            'user.soz_vers_nr' => 'sometimes',
             'user.in_ch_since' => 'sometimes',
             'user.granting' => ['nullable', 'required_with:user.in_ch_since', new Enum(Bewilligung::class)],
         ];
