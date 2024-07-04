@@ -5,7 +5,7 @@
             <div class="row">
 
                 <div class="col-lg-6 col-md-6 footer-contact">
-                    <h3>Walter und Gabriella <br>Eilinger Stiftung</h3>
+                    <h3>Eilinger Stiftung</h3>
                     <p>
                     Seeweg 45<br>
                     8260 Eschenz<br>
