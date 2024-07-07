@@ -16,8 +16,6 @@ class CostFormDarlehen extends Component
     public $getAmountCostDarlehen;
 
 
-    public $getAmountCostDarlehen;
-
     protected $rules = [
         'costs.*.cost_name' => 'required',
         'costs.*.cost_amount' => 'required|numeric',
