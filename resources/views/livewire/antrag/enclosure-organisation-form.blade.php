@@ -17,6 +17,7 @@
             <br/>
             <br/>
             <h4 class="mb-0">{{  __('enclosure.reqDocs')  }}</h4>
+            <div class="p-3 my-4 bg-danger text-white"><b>{{  __('enclosure.instructions')  }}</b></div>
             <div class="table-responsive">
                 <table class="table table-striped">
                 <thead>

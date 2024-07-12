@@ -33,4 +33,5 @@ return [
     'ects_points' => 'Nur für Studenten an universitären Hochschulen: Beleg über die geplanten/gebuchten ECTS-Punkte',
     'send_later' => 'Wird nachgereicht',
     'noEnclosure' => 'Keine Angaben oder Beilagen eingetragen',
+    'instructions' => 'Die Dateien müssen von Format pdf, png, jpg oder jpeg sein und dürfen nicht grösser als 2 MB sein. Sie werden erst gespeichert, wenn keine Fehlermeldungen mehr vorhanden sind.',
 ];
