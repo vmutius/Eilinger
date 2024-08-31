@@ -60,7 +60,7 @@
         <div class="modal" @if ($showModal) style="display:block" @endif>
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
-                    <form wire:submit.prevent="saveEnclosure">
+                    <form wire:submit="saveEnclosure">
                         <div class="modal-header">
                             <h5 class="modal-title">{{  __('file.newFile')  }}</h5>
                             <button wire:click="close" type="button" class="close" data-dismiss="modal"
@@ -71,7 +71,7 @@
                         <div class="modal-body">
                             {{  __('file.application')  }}:
                             <br />
-                            <select wire:model.lazy="application_id" class="form-select">
+                            <select wire:model.blur="application_id" class="form-select">
                                 <option hidden>{{  __('attributes.please_select')  }}</option>
                                 @foreach ($applications as $application)
                                     <option value="{{ $application->id }}">{{ $application->name }}</option>
@@ -83,7 +83,7 @@
                             <br />
                             {{  __('file.content')  }}:
                             <br />
-                            <select wire:model.lazy="column" class="form-select">
+                            <select wire:model.blur="column" class="form-select">
                                 <option hidden="">{{  __('attributes.please_select')  }}</option>
                                 @foreach($this->columns as $column => $value)
                                     @if(in_array($value, ['id', 'created_at', 'updated_at', 'application_id', 'remark', 'is_draft', 'deleted_at']))
@@ -101,7 +101,7 @@
                             <br />
                             {{  __('file.file')  }}:
                             <br />
-                            <input wire:model.defer="file" class="form-control" type="file">
+                            <input wire:model="file" class="form-control" type="file">
                             @error('form')
                                 <div style="font-size: 0.75rem; color: red">{{ $message }}</div>
                             @enderror

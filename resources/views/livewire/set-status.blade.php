@@ -9,13 +9,13 @@
     </div>
     <h3>Status des Antrags</h3>
 
-    <form wire:submit.prevent="setStatus">
+    <form wire:submit="setStatus">
         <div class="row">
             <div class="col-md-12">
                 <p>Aktueller Status: {{ __('application.status_name.' .$application->appl_status->name) }}</p>
                 <p> Neuer Status:
                 @foreach (ApplStatus::cases() as $status)
-                    <input type="radio" wire:model.lazy="application.appl_status" value={{ $status->value }}>
+                    <input type="radio" wire:model.blur="application.appl_status" value={{ $status->value }}>
                     <span>{{ __('application.status_name.' .$status->name) }}</span>
                 @endforeach
                 <span class="text-danger">
@@ -27,7 +27,7 @@
 
                 <p>
                     <label class="form-label" for="reason_rejected">{{  __('application.reason_rejected')  }} </label>
-                    <input wire:model.lazy="application.reason_rejected" type="text" class="form-control" />
+                    <input wire:model.blur="application.reason_rejected" type="text" class="form-control" />
                     <span class="text-danger">@error('application.reason_rejected'){{ $message }}@enderror</span>
                 </p>
             </div>

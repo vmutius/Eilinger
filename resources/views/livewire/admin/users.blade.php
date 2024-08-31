@@ -5,19 +5,19 @@
         <div class="shadow p-3 mb-5 bg-body rounded">
             <div class="row">
                 <div class="col-md-3">
-                    <input wire:model="searchUsername" class="form-control" type="text"
+                    <input wire:model.live="searchUsername" class="form-control" type="text"
                            placeholder="Suchen nach Benutzernamen">
                 </div>
                 <div class="col-md-3">
-                    <input wire:model="searchUserEmail" class="form-control" type="text"
+                    <input wire:model.live="searchUserEmail" class="form-control" type="text"
                            placeholder="Suchen nach Benutzer Email">
                 </div>
                 <div class="col-md-3">
-                    <input wire:model="searchname_inst" class="form-control" type="text"
+                    <input wire:model.live="searchname_inst" class="form-control" type="text"
                            placeholder="Suchen nach Vereinsname">
                 </div>
                 {{-- <div class="col-md-3">
-                   <input wire:model="searchStatusProject" class="form-control" type "text"
+                   <input wire:model.live="searchStatusProject" class="form-control" type "text"
                    placeholder="Suchen nach Projekt Status">
                </div>  --}}
             </div>

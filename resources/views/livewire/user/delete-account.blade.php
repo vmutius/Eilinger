@@ -10,7 +10,7 @@
                 <div class="modal" @if ($showModal) style="display:block" @endif>
                     <div class="modal-dialog" role="document">
                         <div class="modal-content">
-                            <form wire:submit.prevent="destroy()">
+                            <form wire:submit="destroy()">
                                 @csrf
                                 @method('delete')
                                 <div class="modal-header">
@@ -24,7 +24,7 @@
                                     <p>{{  __('user.delAccountConfirmation')  }}</p>
                                     <br />
                                     <label class="form-label" for="password">{{  __('user.password')  }} *</label>
-                                    <input wire:model="current_password" type="password" class="form-control" />
+                                    <input wire:model.live="current_password" type="password" class="form-control" />
                                     <span class="text-danger">@error('current_password'){{ $message }}@enderror</span>
 
 

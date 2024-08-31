@@ -48,7 +48,7 @@
         <div class="modal" @if ($showModal) style="display:block" @endif>
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
-                    <form wire:submit.prevent="save">
+                    <form wire:submit="save">
                         <div class="modal-header">
                             <h5 class="modal-title">{{  __('application.newApplication')  }}</h5>
                             <button wire:click="close" type="button" class="close" data-dismiss="modal"
@@ -59,7 +59,7 @@
                         <div class="modal-body">
                             {{  __('application.name')  }}*:
                             <br />
-                            <input wire:model="name" type="text" class="form-control" />
+                            <input wire:model.live="name" type="text" class="form-control" />
                             @error('name')
                                 <div style="font-size: 0.75rem; color: red">{{ $message }}</div>
                             @enderror
@@ -67,7 +67,7 @@
                             {{  __('application.bereich')  }}*
                             <br />
 
-                            <select wire:model.lazy="bereich" class="form-select" wire:change="updateBereich($event.target.value)">
+                            <select wire:model.blur="bereich" class="form-select" wire:change="updateBereich($event.target.value)">
                                 <option selected value="">{{  __('attributes.please_select')  }}</option>
                                 @foreach (App\Enums\Bereich::cases() as $bereich)
                                     <option value="{{ $bereich }}">{{ __('application.bereichs_name.' .$bereich->name) }}</option>
@@ -81,7 +81,7 @@
                             {{  __('application.desiredForm')  }}*:
                             <br />
 
-                            <select wire:model.lazy="form" class="form-select">
+                            <select wire:model.blur="form" class="form-select">
                                 <option selected value="">{{  __('attributes.please_select')  }}</option>
                                 @foreach ( $this->formOptions  as $form)
                                     <option value="{{ $form }}">{{ __('application.form_name.' .$form) }}</option>
@@ -95,7 +95,7 @@
                             <br />
                             {{  __('application.desiredCurrency')  }}*:
                             <br />
-                            <select wire:model.lazy="currency_id" class="form-select">
+                            <select wire:model.blur="currency_id" class="form-select">
                                 <option selected value="">{{  __('attributes.please_select')  }}</option>
                                 @foreach ($currencies as $currency)
                                     <option value="{{ $currency->id }}">{{ $currency->currency }}</option>
@@ -107,26 +107,26 @@
                             <br />
                             {{  __('application.startDate')  }}*:
                             <br />
-                            <input wire:model="start_appl" type="date"  class="form-control" />
+                            <input wire:model.live="start_appl" type="date"  class="form-control" />
                             @error('start_appl')
                                 <div style="font-size: 0.75rem; color: red">{{ $message }}</div>
                             @enderror
                             <br />
                             {{  __('application.endDate')  }}:
                             <br />
-                            <input wire:model="end_appl" type="date" class="form-control" />
+                            <input wire:model.live="end_appl" type="date" class="form-control" />
                             @error('end_appl')
                                 <div style="font-size: 0.75rem; color: red">{{ $message }}</div>
                             @enderror
                             <br />
                             <div class="form-check form-check-inline">
                                 <label class="form-check-label">{{  __('application.firstAppl')  }}
-                                    <input wire:model.lazy="is_first" class="form-check-input" type="radio" value = "1">
+                                    <input wire:model.blur="is_first" class="form-check-input" type="radio" value = "1">
                                 </label>
                             </div>
                             <div class="form-check form-check-inline">
                                 <label class="form-check-label">{{  __('application.followAppl')  }}
-                                    <input wire:model.lazy="is_first" class="form-check-input" type="radio" value = "0">
+                                    <input wire:model.blur="is_first" class="form-check-input" type="radio" value = "0">
                                 </label>
                             </div>
                             @error('is_first')
@@ -136,7 +136,7 @@
                             @if ($this->visible)
                                 {{  __('application.firstAppl')  }}:
                                 <br />
-                                <select wire:model.lazy="main_appl_id" class="form-select">
+                                <select wire:model.blur="main_appl_id" class="form-select">
                                     <option selected value="">{{  __('attributes.please_select')  }}</option>
                                     @foreach ($first_applications as $first_application)
                                         <option value="{{ $first_application->id }}">{{ $first_application->name }}</option>

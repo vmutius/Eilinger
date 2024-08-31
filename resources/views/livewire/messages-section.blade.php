@@ -9,9 +9,9 @@
     <div class="col-md-12">
         <h3>{{__('message.messages')}} </h3>
 
-        <form wire:submit.prevent="postMessage">
+        <form wire:submit="postMessage">
             <div class="blog-comment">
-                <textarea wire:model.defer="body" id="textareaID" class="form-control"></textarea>
+                <textarea wire:model="body" id="textareaID" class="form-control"></textarea>
 
                 @error('body')
                     <p class="text-danger">{{ $message }}</p>
