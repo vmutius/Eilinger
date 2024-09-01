@@ -13,7 +13,7 @@ class Uebersicht extends Component
     {
         $userCount = User::where('is_admin', 0)->count();
         $applicationCount = Application::whereIn('appl_status', ['pending', 'waiting', 'complete'])->count();
-        $projectCount = Application::where('appl_status', 'approved')->paginate(10);
+        $projectCount = Application::where('appl_status', 'approved')->count();
 
         return view('livewire.admin.uebersicht', [
             'userCount' => $userCount,
