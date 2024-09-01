@@ -21,29 +21,12 @@
                                 <td>
                                     <a
                                         href="{{ route('admin_antrag', ['application_id' => $application->id, 'locale' => app()->getLocale()]) }}">{{ $application->name }}
-                                        ({{ $application->appl_status }})
-                                    </a>
+                                        ({{ $application->appl_status }})</a>
                                 </td>
-                                <td>
-                                    @if ($application->bereich)
-                                        {{ $application->bereich }}
-                                    @endif
-                                </td>
-                                <td>
-                                    @if ($application->user->lastname)
-                                        {{ $application->user->lastname }}
-                                    @endif
-                                </td>
-                                <td>
-                                    @if ($application->user->firstname)
-                                        {{ $application->user->firstname }}
-                                    @endif
-                                </td>
-                                <td>
-                                    @if ($application->user->email)
-                                        {{ $application->user->email }}
-                                    @endif
-                                </td>
+                                <td>{{ $application->bereich }}</td>
+                                <td>{{ optional($application->user)->lastname }}</td>
+                                <td>{{ optional($application->user)->firstname }}</td>
+                                <td>{{ optional($application->user)->email }}</td>
                             </tr>
                         @empty
                             <tr>

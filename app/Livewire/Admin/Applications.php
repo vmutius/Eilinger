@@ -15,7 +15,9 @@ class Applications extends Component
 
     public function render()
     {
-        $applications = Application::with('user')->whereIn('appl_status', ['pending', 'waiting', 'complete'])->paginate(10);
+        $applications = Application::with('user')
+            ->whereIn('appl_status', ['pending', 'waiting', 'complete'])
+            ->paginate(10);
 
         return view('livewire.admin.applications', [
             'applications' => $applications,
