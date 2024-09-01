@@ -90,7 +90,7 @@ return [
     'url' => 'Das Format von :attribute ist ungültig.',
     'required_upload' => 'Die Datei :attribute muss hochgeladen werden',
     'upload_format' => 'Das Dateiformat für :attribute muss vom Typ png, jpg, jpeg oder pfd sein.',
-    'upload_size' => 'Die Datei :attribute muss kleiner als 5MB sein.',
+    'upload_size' => 'Die Datei :attribute muss kleiner als 2 MB sein.',
 
     /*
     |--------------------------------------------------------------------------
