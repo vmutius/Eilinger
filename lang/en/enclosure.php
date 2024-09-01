@@ -33,5 +33,5 @@ return [
     'ects_points' => 'Only for students at universities: Proof of the planned/booked ECTS points',
     'send_later' => 'Will be submitted later',
     'noEnclosure' => 'No remarks or enclosures entered',
-    'instructions' => 'The files must be in pdf, png, jpg or jpeg format and must not be larger than 2 MB. They will only be saved when there are no more error messages.',
+    'instructions' => 'The files must be in pdf, png, jpg or jpeg format and must not be larger than 5 MB. They will only be saved when there are no more error messages.',
 ];

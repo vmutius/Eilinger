@@ -31,8 +31,7 @@ class AppServiceProvider extends ServiceProvider
         }
 
         Blade::directive('convert', function ($expression) {
-            list($money, $currency) = explode(',', str_replace(['(', ')', ' '], '', $expression));
-            return "<?php echo \Number::currency($money, $currency); ?>";
+            return "<?php echo \Number::currency($expression); ?>";
         });
     }
 }

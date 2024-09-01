@@ -168,7 +168,5 @@
         @if ($currentStep < 9)
             @livewire('increase-step')
         @endif
-
-        @livewire('counter')
     </div>
 </div>
