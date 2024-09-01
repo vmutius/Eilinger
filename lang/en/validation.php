@@ -152,7 +152,7 @@ return [
     'uuid' => 'The :attribute field must be a valid UUID.',
     'required_upload' => ' The file :attribute must be uploaded',
     'upload_format' => 'The fileformat of :attribute must be of type png, jpg, jpeg or pfd.',
-    'upload_size' => 'The file :attribute must be smaller than 2 MB.',
+    'upload_size' => 'The file :attribute must be smaller than 5 MB.',
 
     /*
     |--------------------------------------------------------------------------
