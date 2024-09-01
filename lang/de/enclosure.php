@@ -26,7 +26,7 @@ return [
     'statute' => 'Satzung',
     'certificate_of_study' => 'Semesterbestätigung/ Studienbescheinigung',
     'expense_receipts' => 'Kostenbelege',
-    'expense_receipts_stip' => 'Kopie: Kostenbelege für Schulgeld und weitere Auslagen, die ausbildungsbedingt geltend gemacht werden',
+    'expense_receipts_stip' => 'Kopie: Kostenbelege für Schulgeld und weitere Auslagen, die ausbildungsbedingt geltend gemacht werden, falls vorhanden',
     'parents_tax_factors' => 'Steuerfaktoren der Eltern',
     'partner_tax_assessment' => 'Nur für Partner von in Partnerschaft lebenden Gesuchsteller: neueste Steuerveranlagung',
     'supplementary_services' => 'Empfänger von IV-, Waisenrenten bzw. Ergänzungsleistungen: Kopie der Verfügung beilegen',

@@ -1,7 +1,6 @@
 <div class="accordion-item">
     <h2 class="accordion-header" id="headingAppl">
-        <button type="button" class="accordion-button" data-bs-toggle="collapse"
-                data-bs-target="#collapseAppl">Antrag
+        <button type="button" class="accordion-button" data-bs-toggle="collapse" data-bs-target="#collapseAppl">Antrag
         </button>
     </h2>
     <div id="collapseAppl" class="accordion-collapse collapse show">
@@ -20,17 +19,17 @@
                     <p>{{ __('application.currency') }}: {{ $application->currency->abbreviation }}</p>
                 </div>
                 <div class="col-sm-4">
-                    <p>{{ __('application.calc_amount') }}: {{ $application->calc_amount }}</p>
+                    <p>{{ __('application.calc_amount') }}: @convert($application->calc_amount, $application->currency->abbreviation) </p>
                 </div>
                 <div class="col-sm-4">
-                    <p>{{ __('application.req_amount') }}: {{ $application->req_amount }}</p>
+                    <p>{{ __('application.req_amount') }}: @convert($application->req_amount, $application->currency->abbreviation) </p>
                 </div>
                 <div class="col-sm-4">
                     <p>{{ __('application.start_appl') }}: {{ $application->start_appl->format('d.m.Y') }}</p>
                 </div>
                 <div class="col-sm-4">
                     <p>{{ __('application.end_appl') }}
-                        : {{ $application->end_appl ? $application->end_appl->format('d.m.Y') :null }}</p>
+                        : {{ $application->end_appl ? $application->end_appl->format('d.m.Y') : null }}</p>
                 </div>
                 @if ($application->form->value == 'Darlehen')
                     <div class="col-sm-4">

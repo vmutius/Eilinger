@@ -26,7 +26,7 @@ return [
     'statute' => 'Statutes',
     'certificate_of_study' => 'Semester confirmation/certificate of study',
     'expense_receipts' => 'Expense receipts',
-    'expense_receipts_stip' => 'Copy of receipts for school fees and other expenses claimed as a result of training',
+    'expense_receipts_stip' => 'Copy of receipts for school fees and other expenses claimed as a result of training if available',
     'parents_tax_factors' => 'Parents\' tax factors',
     'partner_tax_assessment' => 'Only for partners of applicants living in a partnership: latest tax assessment',
     'supplementary_services' => 'Recipients of IV or orphan\'s pensions or supplementary benefits: Enclose a copy of the decree',
