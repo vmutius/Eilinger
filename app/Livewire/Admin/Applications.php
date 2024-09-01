@@ -17,6 +17,7 @@ class Applications extends Component
     {
         $applications = Application::with('user')
             ->whereIn('appl_status', ['pending', 'waiting', 'complete'])
+            ->whereNull('deleted_at')
             ->paginate(10);
 
         return view('livewire.admin.applications', [
