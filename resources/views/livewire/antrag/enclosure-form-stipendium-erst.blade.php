@@ -1,4 +1,4 @@
-<form wire:submit="saveEnclosure">
+<form wire:submit="saveEnclosure" method="POST" enctype="multipart/form-data">
     <div class="content-header mb-3">
         <h3 class="mb-0">{{ __('enclosure.title') }}</h3>
         <small>{{ __('enclosure.subtitle_stip') }}</small>

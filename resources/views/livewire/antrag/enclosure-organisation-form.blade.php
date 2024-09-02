@@ -1,4 +1,4 @@
-<form wire:submit="saveEnclosureOrg">
+<form wire:submit="saveEnclosureOrg" method="POST" enctype="multipart/form-data">
     <div class="content-header mb-3">
         <h3 class="mb-0">{{ __('enclosure.title') }}</h3>
         <small>{{ __('enclosure.subtitle') }}</small>
@@ -49,7 +49,8 @@
                             </td>
                             <td>
                                 <div class="mb-3">
-                                    <input wire:model.live="enclosure.commercialRegisterExtractSendLater" type="checkbox">
+                                    <input wire:model.live="enclosure.commercialRegisterExtractSendLater"
+                                        type="checkbox">
                                 </div>
                             </td>
                         </tr>
@@ -58,8 +59,7 @@
                             <td><b>{{ __('enclosure.statute') }} * </b></td>
                             <td>
                                 <div class="mb-3">
-                                    <input wire:model="statute" class="form-control" type="file"
-                                        id="formFile">
+                                    <input wire:model="statute" class="form-control" type="file" id="formFile">
                                 </div>
                                 <span class="text-danger">
                                     @error('statute')
@@ -84,8 +84,7 @@
                             <td><b>{{ __('enclosure.activity') }} * </b></td>
                             <td>
                                 <div class="mb-3">
-                                    <input wire:model="activity" class="form-control" type="file"
-                                        id="formFile">
+                                    <input wire:model="activity" class="form-control" type="file" id="formFile">
                                 </div>
                                 <span class="text-danger">
                                     @error('activity')

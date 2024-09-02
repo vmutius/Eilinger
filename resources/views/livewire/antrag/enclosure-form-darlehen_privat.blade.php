@@ -1,4 +1,4 @@
-<form wire:submit="saveEnclosureDarlehen">
+<form wire:submit="saveEnclosureDarlehen" method="POST" enctype="multipart/form-data">
     <div class="content-header mb-3">
         <h3 class="mb-0">{{ __('enclosure.title') }}</h3>
         <small>{{ __('enclosure.subtitle') }}</small>
@@ -9,6 +9,7 @@
 
         <h4 class="mb-0">{{ __('enclosure.remark') }}</h4>
         <div class="col-sm-12">
+
             <div class="row g-3">
                 <div class="col-sm-12">
                     <textarea wire:model.blur="enclosure.remark" class="form-control" rows="3"></textarea>
