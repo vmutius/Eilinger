@@ -15,9 +15,14 @@ class Users extends Component
 
     public $searchUserEmail;
 
-    public $searchStatusProject;
+    public $filterStatus;
 
-    public $searchname_inst;
+    public $filterBereich;
+
+    public $searchNameInst;
+
+    public $sortCol;
+    public $sortAsc = false;
 
     protected $paginationTheme = 'bootstrap';
 
@@ -25,28 +30,63 @@ class Users extends Component
     {
         $this->searchUsername = '';
         $this->searchUserEmail = '';
-        $this->searchStatusProject = '';
-        $this->searchname_inst = '';
+        $this->searchNameInst = '';
+        $this->filterBereich = '';
+        $this->filterStatus = '';
     }
+
+    protected function applySorting($query) {}
+
+    protected function searchUsername($query)
+    {
+        return $this->searchUsername === ''
+            ? $query
+            : $query->where('username', 'like', '%' . $this->searchUsername . '%');
+    }
+
+    protected function searchUserEmail($query)
+    {
+        return $this->searchUserEmail === ''
+            ? $query
+            : $query->where('email', 'like', '%' . $this->searchUserEmail . '%');;
+    }
+
+    protected function searchNameInst($query)
+    {
+        return $this->searchNameInst === ''
+            ? $query
+            : $query->where('name_inst', 'like', '%' . $this->searchNameInst . '%');;
+    }
+
+    protected function filterBereich($query)
+    {
+        return $this->filterBereich === ''
+            ? $query
+            : $query->where('bereich', 'like', '%' . $this->filterBereich . '%');;
+    }
+
+    protected function filterStatus($query)
+    {
+        return $this->filterStatus === ''
+            ? $query
+            : $query->where('status', 'like', '%' . $this->filterStatus . '%');;
+    }
+
+
 
     public function render()
     {
         $users = User::with('lastLogin')->first()
             ->where('is_admin', 0)->with('sendApplications')->orderBy('lastname')
-            ->when($this->searchUsername != '', function ($query) {
-                $query->where('username', 'like', '%'.$this->searchUsername.'%');
-            })
-            ->when($this->searchUserEmail != '', function ($query) {
-                $query->where('email', 'like', '%'.$this->searchUserEmail.'%');
-            })
-            ->when($this->searchname_inst != '', function ($query) {
-                $query->where('name_inst', 'like', '%'.$this->searchname_inst.'%');
-            })
+            ->searchUsername()
+            ->searchUserEmail()
+            ->searchNameInst()
+
+            ->when($this->filterBereich != '', function ($query) {})
             ->paginate(20);
 
         return view('livewire.admin.users', [
             'users' => $users,
-        ])
-            ->layout(AdminDashboard::class);
+        ])->layout(AdminDashboard::class);
     }
 }

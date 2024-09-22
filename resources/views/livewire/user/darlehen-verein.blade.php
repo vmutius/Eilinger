@@ -166,7 +166,11 @@
         @endif
 
         @if ($currentStep < 9)
-            @livewire('increase-step')
+            <button class="btn btn-colour-1  btn-next pull-end" wire:click="increaseStep()">
+                <span
+                    class="align-middle d-sm-inline-block d-none me-sm-1 align-middle">{{ __('attributes.continue') }}</span>
+                <i class="bx bx-chevron-right bx-sm me-sm-n2 align-middle"></i>
+            </button>
         @endif
     </div>
 </div>

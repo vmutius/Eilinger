@@ -100,7 +100,7 @@ class Antraege extends Component
             'end_appl' => $this->end_appl,
         ]);
 
-       $this->close();
+        $this->close();
     }
     public function updateBereich($value)
     {
@@ -146,5 +146,4 @@ class Antraege extends Component
                 ->get();
         }
     }
-
 }

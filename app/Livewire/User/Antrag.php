@@ -42,6 +42,7 @@ class Antrag extends Component
 
     public function increaseStep()
     {
+        ray('INcresase');
         $this->currentStep++;
     }
 
