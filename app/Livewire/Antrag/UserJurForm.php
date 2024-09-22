@@ -47,7 +47,6 @@ class UserJurForm extends Component
 
     public function saveUserJur()
     {
-        Log::info('saveUserJur called');
         $this->validate();
         $this->user->is_draft = false;
         $this->user->save();

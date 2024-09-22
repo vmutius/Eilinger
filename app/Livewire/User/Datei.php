@@ -22,11 +22,11 @@ class Datei extends Component
 
     public $UserName;
 
-   public $application_id;
+    public $application_id;
 
-   public $column;
+    public $column;
 
-   public $file;
+    public $file;
 
     public $columns = [];
 
@@ -48,7 +48,7 @@ class Datei extends Component
 
         $lastname = auth()->user()->lastname;
         $firstname = auth()->user()->firstname;
-        $this->UserName = $lastname.'_'.$firstname;
+        $this->UserName = $lastname . '_' . $firstname;
     }
 
     public function render()
@@ -67,10 +67,11 @@ class Datei extends Component
         $this->validate();
         $column = $this->column;
         $file = $this->file;
-        $appl_id = $this->application_id;
-        $fileName = 'Appl'.$appl_id.'_'.$column.'.'.$file->getClientOriginalExtension();
+        $fileName = 'Appl' . $this->application_id . '_' . $column . '.' . $file->getClientOriginalExtension();
         $filePath = $file->storeAs($this->UserName, $fileName, 'uploads');
         $this->enclosure->$column = $filePath;
+        $this->enclosure->application_id = $this->application_id;
+        ray($this->enclosure);
         $this->enclosure->save();
 
         $this->application_id = '';
@@ -81,9 +82,11 @@ class Datei extends Component
         $this->dispatch('fileUploaded');
     }
 
-    public function updatedApplicationId($application_id) {
-        $this->enclosure = Enclosure::where('application_id', $application_id)->first();
+    public function updatedApplicationId($application_id)
+    {
+        $this->enclosure = Enclosure::where('application_id', $application_id)->first() ?? new Enclosure;;
         if ($this->enclosure) {
+
             $this->columns = Schema::getColumnListing($this->enclosure->getTable());
         } else {
             $this->columns = [];
