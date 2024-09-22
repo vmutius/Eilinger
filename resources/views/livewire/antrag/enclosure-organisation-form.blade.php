@@ -1,4 +1,4 @@
-<form wire:submit="saveEnclosureOrg" method="POST" enctype="multipart/form-data">
+<form wire:submit.prevent="saveEnclosureOrg" method="POST" enctype="multipart/form-data">
     <div class="content-header mb-3">
         <h3 class="mb-0">{{ __('enclosure.title') }}</h3>
         <small>{{ __('enclosure.subtitle') }}</small>
@@ -38,11 +38,9 @@
                                     <input wire:model="commercial_register_extract" class="form-control" type="file"
                                         id="formFile">
                                 </div>
-                                <span class="text-danger">
-                                    @error('commercial_register_extract')
-                                        {{ $message }}
-                                    @enderror
-                                </span>
+                                @error('commercial_register_extract')
+                                    <span class="text-danger">{{ $message }}</span>
+                                @enderror
                             </td>
                             <td>
                                 @if ($enclosure->commercial_register_extract)
@@ -52,8 +50,7 @@
                             </td>
                             <td>
                                 <div class="mb-3">
-                                    <input wire:model.live="enclosure.commercialRegisterExtractSendLater"
-                                        type="checkbox">
+                                    <input wire:model="enclosure.commercialRegisterExtractSendLater" type="checkbox">
                                 </div>
                             </td>
                         </tr>
