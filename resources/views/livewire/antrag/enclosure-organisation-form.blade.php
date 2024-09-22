@@ -34,7 +34,10 @@
                             <th scope="row">1</th>
                             <td><b>{{ __('enclosure.commercial_register_extract') }} *</b></td>
                             <td>
-                                <livewire:upload-enclosure />
+                                <div class="mb-3">
+                                    <input wire:model="commercial_register_extract" class="form-control" type="file"
+                                        id="formFile">
+                                </div>
                                 <span class="text-danger">
                                     @error('commercial_register_extract')
                                         {{ $message }}
