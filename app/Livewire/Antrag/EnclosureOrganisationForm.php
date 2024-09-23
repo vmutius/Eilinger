@@ -83,6 +83,12 @@ class EnclosureOrganisationForm extends Component
     public function saveEnclosureOrg(): void
     {
         Log::error('Validation Errors:', $this->getErrorBag()->toArray());
+        Log::info('File Info:', [
+            'name' => $this->activity_report->getClientOriginalName(),
+            'size' => $this->activity_report->getSize(),
+            'mime_type' => $this->activity_report->getMimeType(),
+        ]);
+
         $this->validate();
 
 
