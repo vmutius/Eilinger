@@ -10,6 +10,7 @@ use Livewire\Component;
 use Livewire\WithFileUploads;
 use Psr\Container\ContainerExceptionInterface;
 use Psr\Container\NotFoundExceptionInterface;
+use Illuminate\Support\Facades\Log;
 
 class EnclosureOrganisationForm extends Component
 {
@@ -17,7 +18,7 @@ class EnclosureOrganisationForm extends Component
 
     public $enclosure;
     public $filePath;
-    public $UserName;
+    public $userName;
     public $isInitialAppl;
     public $commercial_register_extract;
     public $statute;
@@ -28,10 +29,10 @@ class EnclosureOrganisationForm extends Component
     public $cost_receipts;
     public function rules()
     {
-        $commercial_register_extract = is_null($this->enclosure->commercial_register_extract) && $this->enclosure->commercialRegisterExtractSendLater==0;
-        $statute = is_null($this->enclosure->statute) && $this->enclosure->statuteSendLater==0;
-        $activity = is_null($this->enclosure->activity) && $this->enclosure->activitySendLater==0;
-        $activity_report = is_null($this->enclosure->activity_report) && $this->enclosure->activityReportSendLater==0;
+        $commercial_register_extract = is_null($this->enclosure->commercial_register_extract) && $this->enclosure->commercialRegisterExtractSendLater == 0;
+        $statute = is_null($this->enclosure->statute) && $this->enclosure->statuteSendLater == 0;
+        $activity = is_null($this->enclosure->activity) && $this->enclosure->activitySendLater == 0;
+        $activity_report = is_null($this->enclosure->activity_report) && $this->enclosure->activityReportSendLater == 0;
 
         return [
             'enclosure.remark' => 'nullable',
@@ -63,13 +64,11 @@ class EnclosureOrganisationForm extends Component
      */
     public function mount(): void
     {
-        $lastname = auth()->user()->lastname;
-        $firstname = auth()->user()->firstname;
-        $this->UserName = $lastname.'_'.$firstname;
+        $user = auth()->user();
+        $this->userName = "{$user->lastname}_{$user->firstname}";
         $this->enclosure = Enclosure::where('application_id', session()->get('appl_id'))
             ->first() ?? new Enclosure;
         $this->isInitialAppl = Application::where('id', session()->get('appl_id'))->first(['is_first'])->is_first;
-
     }
 
     public function render()
@@ -83,8 +82,11 @@ class EnclosureOrganisationForm extends Component
      */
     public function saveEnclosureOrg(): void
     {
+        Log::error('Validation Errors:', $this->getErrorBag()->toArray());
         $this->validate();
-        if($this->commercial_register_extract) {
+
+
+        if ($this->commercial_register_extract) {
             $file_commercial_register_extract = $this->upload($this->commercial_register_extract, 'commercial_register_extract');
             $this->enclosure->commercial_register_extract = $file_commercial_register_extract;
             $this->enclosure->commercialRegisterExtractSendLater = false;
@@ -139,9 +141,9 @@ class EnclosureOrganisationForm extends Component
     {
         if (! is_null($type)) {
             $appl_id = session()->get('appl_id');
-            $fileName = 'Appl'.$appl_id.'_'.$text.'.'.$type->getClientOriginalExtension();
+            $fileName = 'Appl' . $appl_id . '_' . $text . '.' . $type->getClientOriginalExtension();
 
-            return $type->storeAs($this->UserName, $fileName, 's3');
+            return $type->storeAs($this->userName, $fileName, 's3');
         }
     }
 }

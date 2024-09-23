@@ -6,6 +6,7 @@ use App\Models\Enclosure;
 use App\Rules\FileUploadRule;
 use Illuminate\Support\Facades\Lang;
 use Livewire\Component;
+use Illuminate\Support\Facades\Log;
 use Livewire\WithFileUploads;
 
 class EnclosureFormDarlehenPrivat extends Component
@@ -80,6 +81,7 @@ class EnclosureFormDarlehenPrivat extends Component
 
     public function saveEnclosureDarlehen()
     {
+        Log::error('Validation Errors:', $this->getErrorBag()->toArray());
         $this->validate();
         if ($this->activity) {
             $file_activity = $this->upload($this->activity, 'activity');
