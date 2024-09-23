@@ -76,14 +76,24 @@ class Users extends Component
 
     public function render()
     {
-        $users = User::with('lastLogin')->first()
-            ->where('is_admin', 0)->with('sendApplications')->orderBy('lastname')
-            ->searchUsername()
-            ->searchUserEmail()
-            ->searchNameInst()
-
-            ->when($this->filterBereich != '', function ($query) {})
+        $users = User::with('lastLogin')
+            ->where('is_admin', 0)
+            ->with('sendApplications')
+            ->orderBy('lastname')
+            ->when($this->searchUsername != '', function ($query) {
+                $this->searchUsername($query);
+            })
+            ->when($this->searchUserEmail != '', function ($query) {
+                $this->searchUserEmail($query);
+            })
+            ->when($this->searchNameInst != '', function ($query) {
+                $this->searchNameInst($query);
+            })
+            ->when($this->filterBereich != '', function ($query) {
+                // Add your filter logic here
+            })
             ->paginate(20);
+
 
         return view('livewire.admin.users', [
             'users' => $users,
