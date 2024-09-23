@@ -1,5 +1,6 @@
 @php use App\Enums\CivilStatus; @endphp
 <form wire:submit="saveUserNat">
+    @csrf
     <div class="content-header mb-3">
         <h3 class="mb-0">{{ __('user.applicant') }}</h3>
         <div class="d-flex justify-content-between">

@@ -1,4 +1,5 @@
 <form wire:submit.prevent="saveEnclosureOrg" method="POST" enctype="multipart/form-data">
+    @csrf
     <div class="content-header mb-3">
         <h3 class="mb-0">{{ __('enclosure.title') }}</h3>
         <small>{{ __('enclosure.subtitle') }}</small>

@@ -1,4 +1,5 @@
 <form wire:submit="saveReqAmount">
+    @csrf
     <div class="content-header mb-3">
         <h3 class="mb-0">{{ __('reqAmount.title') }}</h3>
         <div class="d-flex justify-content-between">
