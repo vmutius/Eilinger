@@ -54,7 +54,7 @@ Route::group(['prefix' => '{locale}', 'middleware' => 'setLocale'], function () 
         Route::patch('user/profile', [ProfileController::class, 'update'])->name('user_profile.update');
         Route::get('user/dateien', App\Livewire\User\Datei::class)->name('user_dateien');
         Route::get('user/delete', App\Livewire\User\DeleteAccount::class)->name('user_delete');
-        Route::post('/livewire/upload-enclosure', [UploadEnclosure::class, 'handleChunk'])->name('livewire.upload-enclosure');
+        Route::post('/upload-test', [App\Http\Controllers\UploadTestController::class, 'store']);
     });
 
     Route::group(['middleware' => ['admin', 'twofactor']], function () {
