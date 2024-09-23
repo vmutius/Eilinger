@@ -3,17 +3,21 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class UploadTestController extends Controller
 {
     public function store(Request $request)
     {
         $request->validate([
-            'activity_report' => 'required|file|max:262144',
+            'file' => 'required|file|max:262144',
         ]);
 
-        $path = $request->file('activity_report')->store('uploads');
+        $file = $request->file('file');
+        $path = $file->store('uploads', 'public');
 
-        return response()->json(['path' => $path]);
+        $url = Storage::url("uploads/{$path}");
+
+        return $url;
     }
 }

@@ -36,6 +36,12 @@ Route::group(['prefix' => '{locale}', 'middleware' => 'setLocale'], function () 
     Route::get('verify/resend', [TwoFactorController::class, 'resend'])->name('verify.resend');
     Route::resource('verify', TwoFactorController::class)->only(['index', 'store']);
 
+    Route::get('upload-test', function () {
+        return view('home.upload-test');
+    })->name('upload-test');
+
+    Route::post('upload-test', [App\Http\Controllers\UploadTestController::class, 'store'])->name('upload-test');
+
     Route::middleware('guest')->group(function () {
         Route::get('register-inst', App\Livewire\Auth\RegisterInst::class)->name('registerInst');
         Route::get('register-privat', App\Livewire\Auth\RegisterPrivat::class)->name('registerPrivat');
@@ -54,7 +60,6 @@ Route::group(['prefix' => '{locale}', 'middleware' => 'setLocale'], function () 
         Route::patch('user/profile', [ProfileController::class, 'update'])->name('user_profile.update');
         Route::get('user/dateien', App\Livewire\User\Datei::class)->name('user_dateien');
         Route::get('user/delete', App\Livewire\User\DeleteAccount::class)->name('user_delete');
-        Route::post('/upload-test', [App\Http\Controllers\UploadTestController::class, 'store']);
     });
 
     Route::group(['middleware' => ['admin', 'twofactor']], function () {
