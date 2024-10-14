@@ -26,7 +26,6 @@ class DarlehenVerein extends Component
 
     public function increaseStep()
     {
-        ray('Hello world');
         $this->currentStep++;
     }
 

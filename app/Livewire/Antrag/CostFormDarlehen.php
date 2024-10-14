@@ -10,11 +10,10 @@ use Livewire\Component;
 
 class CostFormDarlehen extends Component
 {
-    public $costs;
+    public $costs = [];
     public $currency_id;
     public $myCurrency;
     public $getAmountCostDarlehen;
-
 
     protected $rules = [
         'costs.*.cost_name' => 'required',
@@ -52,34 +51,45 @@ class CostFormDarlehen extends Component
     public function saveCostDarlehen()
     {
         $this->validate();
-
-        $this->costs->each(function ($cost) {
+    
+        foreach ($this->costs as $cost) {
             $cost->is_draft = false;
             $cost->user_id = auth()->user()->id;
             $cost->application_id = session()->get('appl_id');
             $cost->save();
-        });
-
+        };
+    
         session()->flash('success', __('userNotification.costSaved'));
     }
 
     public function getAmountCostDarlehen()
     {
         $this->getAmountCostDarlehen = '0.00';
-        $this->costs->each(function ($cost) {
-            $this->getAmountCostDarlehen += $cost->cost_amount;
-        });
+        foreach ($this->costs as $cost)
+        {
+            $this->getAmountCostDarlehen += $cost['cost_amount'];
+        }
 
         return $this->getAmountCostDarlehen;
     }
 
     public function addCostDarlehen()
     {
-        $this->costs->push(new CostDarlehen);
+        $this->costs->push(new CostDarlehen(['cost_name' => '', 'cost_amount' => 0, 'id' => null]));
     }
 
-    public function delCostDarlehen($key)
+    public function delCostDarlehen($index)
     {
-        $this->costs->forget($key);
+        $cost = $this->costs->get($index);
+
+        // If the cost has an ID, it exists in the database
+        if ($cost && $cost->id) {
+            // Delete from the database
+            $cost->delete();
+        }
+
+        // Remove from the collection
+        $this->costs->forget($index);
+
     }
 }

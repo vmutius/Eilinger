@@ -10,11 +10,10 @@ use Livewire\Component;
 
 class FinancingOrganisationForm extends Component
 {
-    public $financings;
-
+    public $financings = [];
     public $currency_id;
-
     public $myCurrency;
+    public $getAmountFinancingOrganisation;
 
     protected $rules = [
         'financings.*.financing_name' => 'required',
@@ -46,12 +45,12 @@ class FinancingOrganisationForm extends Component
     {
         $this->validate();
 
-        $this->financings->each(function ($financing) {
+        foreach ($this->financings as $financing) {
             $financing->is_draft = false;
             $financing->user_id = auth()->user()->id;
             $financing->application_id = session()->get('appl_id');
             $financing->save();
-        });
+        };
 
         session()->flash('success', __('userNotification.financingSaved'));
     }
@@ -59,20 +58,29 @@ class FinancingOrganisationForm extends Component
     public function getAmountFinancingOrganisation()
     {
         $this->getAmountFinancingOrganisation = '0.00';
-        $this->financings->each(function ($financing) {
+        foreach ($this->financings as $financing){
             $this->getAmountFinancingOrganisation += $financing->financing_amount;
-        });
+        };
 
         return $this->getAmountFinancingOrganisation;
     }
 
     public function addFinancingOrganisation()
     {
-        $this->financings->push(new FinancingOrganisation);
+        $this->financings->push(new FinancingOrganisation(['financing_name' => '', 'financing_amount' => 0, 'id' => null]));
     }
 
-    public function delFinancingOrganisation($key)
+    public function delFinancingOrganisation($index)
     {
-        $this->financings->forget($key);
+        $financing = $this->financings->get($index);
+
+        // If the cost has an ID, it exists in the database
+        if ($financing && $financing->id) {
+            // Delete from the database
+            $financing->delete();
+        }
+
+        // Remove from the collection
+        $this->financings->forget($index);
     }
 }
