@@ -19,10 +19,18 @@
                     <p>{{ __('application.currency') }}: {{ $application->currency->abbreviation }}</p>
                 </div>
                 <div class="col-sm-4">
-                    <p>{{ __('application.calc_amount') }}: @convert($application->calc_amount, $application->currency->abbreviation) </p>
+                    <p>{{ __('application.calc_amount') }}: 
+                        @if($application->calc_amount)
+                            @convert($application->calc_amount, $application->currency->abbreviation) 
+                        @endif
+                    </p>
                 </div>
                 <div class="col-sm-4">
-                    <p>{{ __('application.req_amount') }}: @convert($application->req_amount, $application->currency->abbreviation) </p>
+                    <p>{{ __('application.req_amount') }}: 
+                        @if($application->req_amount)
+                            @convert($application->req_amount, $application->currency->abbreviation)
+                        @endif
+                    </p>
                 </div>
                 <div class="col-sm-4">
                     <p>{{ __('application.start_appl') }}: {{ $application->start_appl->format('d.m.Y') }}</p>
