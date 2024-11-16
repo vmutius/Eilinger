@@ -4,15 +4,15 @@
         <div class="row g-3" :key="siblings.{{ $index }}">
             <div class="col-sm-5">
                 <label class="form-label" for="siblings.{{ $index }}.lastname">Nachname</label>
-                <input wire:model.lazy="siblings.{{ $index }}.lastname" type="text" class="form-control"/>
+                <input wire:model.blur="siblings.{{ $index }}.lastname" type="text" class="form-control"/>
             </div>
             <div class="col-sm-5">
                 <label class="form-label" for="siblings.{{ $index }}.firstname">Vorname</label>
-                <input wire:model.lazy="siblings.{{ $index }}.firstname" type="text" class="form-control"/>
+                <input wire:model.blur="siblings.{{ $index }}.firstname" type="text" class="form-control"/>
             </div>
             <div class="col-sm-2">
                 <label class="form-label" for="siblings.{{ $index }}.birth_year">Geburtsjahr</label>
-                <input wire:model.lazy="siblings.{{ $index }}.birth_year" type="text" class="form-control"/>
+                <input wire:model.blur="siblings.{{ $index }}.birth_year" type="text" class="form-control"/>
             </div>
         </div>
     @endforeach
@@ -22,7 +22,7 @@
             @foreach ($addSibling as $index => $value)
                 <div class="col-sm-5" :key="addSibling{{ $index }}">
                     <label class="form-label" for="addSibling.{{ $index }}.lastname">Nachname</label>
-                    <input type="text" wire:model="addSibling.{{ $index }}.lastname"
+                    <input type="text" wire:model.live="addSibling.{{ $index }}.lastname"
                            :key="addSibling.{{ $index }}.lastname"/>
 
                     <button class="btn btn-success" type="button" wire:click="save({{ $index }})"

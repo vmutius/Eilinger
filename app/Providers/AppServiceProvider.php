@@ -4,6 +4,8 @@ namespace App\Providers;
 
 use Illuminate\Support\Facades\URL;
 use Illuminate\Support\ServiceProvider;
+use Illuminate\Support\Facades\Blade;
+use Illuminate\Support\Number;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -24,9 +26,12 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        if($this->app->environment('production'))
-        {
+        if ($this->app->environment('production')) {
             URL::forceScheme('https');
         }
+
+        Blade::directive('convert', function ($expression) {
+            return "<?php echo \Number::currency($expression); ?>";
+        });
     }
 }

@@ -26,11 +26,12 @@ return [
     'statute' => 'Satzung',
     'certificate_of_study' => 'Semesterbestätigung/ Studienbescheinigung',
     'expense_receipts' => 'Kostenbelege',
-    'expense_receipts_stip' => 'Kopie: Kostenbelege für Schulgeld und weitere Auslagen, die ausbildungsbedingt geltend gemacht werden',
+    'expense_receipts_stip' => 'Kopie: Kostenbelege für Schulgeld und weitere Auslagen, die ausbildungsbedingt geltend gemacht werden, falls vorhanden',
     'parents_tax_factors' => 'Steuerfaktoren der Eltern',
     'partner_tax_assessment' => 'Nur für Partner von in Partnerschaft lebenden Gesuchsteller: neueste Steuerveranlagung',
     'supplementary_services' => 'Empfänger von IV-, Waisenrenten bzw. Ergänzungsleistungen: Kopie der Verfügung beilegen',
     'ects_points' => 'Nur für Studenten an universitären Hochschulen: Beleg über die geplanten/gebuchten ECTS-Punkte',
     'send_later' => 'Wird nachgereicht',
     'noEnclosure' => 'Keine Angaben oder Beilagen eingetragen',
+    'instructions' => 'Die Dateien müssen von Format pdf, png, jpg oder jpeg sein und dürfen nicht grösser als 2 MB sein. Sie werden erst gespeichert, wenn keine Fehlermeldungen mehr vorhanden sind.',
 ];

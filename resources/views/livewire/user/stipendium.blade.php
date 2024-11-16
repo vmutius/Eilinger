@@ -169,7 +169,7 @@
                 <div class="modal" @if ($showModal) style="display:block" @endif>
                     <div class="modal-dialog" role="document">
                         <div class="modal-content">
-                            <form wire:submit.prevent="save">
+                            <form wire:submit="save">
                                 <div class="modal-header">
                                     <h5 class="modal-title">{{ __('sending.submitApplication') }}</h5>
                                     <button wire:click="close" type="button" class="close" data-dismiss="modal"

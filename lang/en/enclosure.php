@@ -26,11 +26,12 @@ return [
     'statute' => 'Statutes',
     'certificate_of_study' => 'Semester confirmation/certificate of study',
     'expense_receipts' => 'Expense receipts',
-    'expense_receipts_stip' => 'Copy of receipts for school fees and other expenses claimed as a result of training',
+    'expense_receipts_stip' => 'Copy of receipts for school fees and other expenses claimed as a result of training if available',
     'parents_tax_factors' => 'Parents\' tax factors',
     'partner_tax_assessment' => 'Only for partners of applicants living in a partnership: latest tax assessment',
     'supplementary_services' => 'Recipients of IV or orphan\'s pensions or supplementary benefits: Enclose a copy of the decree',
     'ects_points' => 'Only for students at universities: Proof of the planned/booked ECTS points',
     'send_later' => 'Will be submitted later',
     'noEnclosure' => 'No remarks or enclosures entered',
+    'instructions' => 'The files must be in pdf, png, jpg or jpeg format and must not be larger than 2 MB. They will only be saved when there are no more error messages.',
 ];

@@ -39,7 +39,7 @@
         <div class="modal" @if ($showModal) style="display:block" @endif>
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
-                    <form wire:submit.prevent="save">
+                    <form wire:submit="save">
                         <div class="modal-header">
                             <h5 class="modal-title">Neuen Admin erstellen</h5>
                             <button wire:click="close" type="button" class="close" data-dismiss="modal"
@@ -49,13 +49,13 @@
                         </div>
                         <div class="modal-body">
                             Benutzername:
-                            <input wire:model="username" class="form-control" />
+                            <input wire:model.live="username" class="form-control" />
                             @error('username')
                                 <div style="font-size: 0.75rem; color: red">{{ $message }}</div>
                             @enderror
 
                             Anrede:
-                            <select wire:model.lazy="salutation" class="form-select" type="text">
+                            <select wire:model.blur="salutation" class="form-select" type="text">
                             <option selected>Bitte Anrede auswählen...</option>
                                 @foreach (App\Enums\Salutation::cases() as $salutation)
                                     <option value="{{ $salutation->value }}">{{ $salutation->name }}</option>
@@ -66,31 +66,31 @@
                             @enderror
 
                             Nachname:
-                            <input wire:model="lastname" class="form-control" />
+                            <input wire:model.live="lastname" class="form-control" />
                             @error('lastname')
                                 <div style="font-size: 0.75rem; color: red">{{ $message }}</div>
                             @enderror
 
                             Vorname:
-                            <input wire:model="firstname" class="form-control" />
+                            <input wire:model.live="firstname" class="form-control" />
                             @error('firstname')
                                 <div style="font-size: 0.75rem; color: red">{{ $message }}</div>
                             @enderror
 
                             Telefon:
-                            <input wire:model="phone" class="form-control" />
+                            <input wire:model.live="phone" class="form-control" />
                             @error('phone')
                                 <div style="font-size: 0.75rem; color: red">{{ $message }}</div>
                             @enderror
 
                             Email:
-                            <input wire:model="email" class="form-control" />
+                            <input wire:model.live="email" class="form-control" />
                             @error('email')
                                 <div style="font-size: 0.75rem; color: red">{{ $message }}</div>
                             @enderror
 
                             Password:
-                            <input wire:model="password" class="form-control" />
+                            <input wire:model.live="password" class="form-control" />
                             @error('password')
                                 <div style="font-size: 0.75rem; color: red">{{ $message }}</div>
                             @enderror

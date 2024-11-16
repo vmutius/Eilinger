@@ -29,9 +29,9 @@
         </i>
     </p>
     @if ($isEditing)
-        <form wire:submit.prevent="editMessage">
+        <form wire:submit="editMessage">
             <div class="blog-comment">
-                <textarea wire:model.defer="body" id="textareaID" class="form-control"></textarea>
+                <textarea wire:model="body" id="textareaID" class="form-control"></textarea>
 
                 @error('body')
                 <p class="text-danger">{{ $message }}</p>
@@ -48,9 +48,9 @@
         {{ $message->body }}
     @endif
     @if ($isReplying)
-        <form wire:submit.prevent="postReply">
+        <form wire:submit="postReply">
             <div class="blog-comment">
-                <textarea wire:model.defer="body" id="textareaID" class="form-control"></textarea>
+                <textarea wire:model="body" id="textareaID" class="form-control"></textarea>
 
                 @error('body')
                 <p class="text-danger">{{ $message }}</p>

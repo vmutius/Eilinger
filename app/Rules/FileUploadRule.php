@@ -18,24 +18,26 @@ class FileUploadRule implements ValidationRule
     {
         $this->isRequired = $isRequired;
         $this->allowedMimes = ['image/png', 'image/jpg', 'image/jpeg', 'application/pdf'];
-        $this->maxSize = 2048;
+        $this->maxSize = 5120;
     }
 
     public function validate(string $attribute, mixed $value, Closure $fail): void
     {
-
-        if ($this->isRequired && ! $value) {
+        if ($this->isRequired && !$value) {
             $fail(__('validation.required_upload'));
+            return;
         }
 
-        if ($value instanceof UploadedFile) {
-            if (! empty($this->allowedMimes) && ! in_array($value->getMimeType(), $this->allowedMimes)) {
-                $fail(__('validation.upload_format'));
-            }
+        if (!$value instanceof UploadedFile) {
+            return;
+        }
 
-            if ($this->maxSize !== null && $value->getSize() > $this->maxSize * 1024) {
-                $fail(__('validation.upload_size'));
-            }
+        if ($this->allowedMimes && !in_array($value->getMimeType(), $this->allowedMimes, true)) {
+            $fail(__('validation.upload_format'));
+        }
+
+        if ($this->maxSize !== null && $value->getSize() > $this->maxSize * 1024) {
+            $fail(__('validation.upload_size'));
         }
     }
 }

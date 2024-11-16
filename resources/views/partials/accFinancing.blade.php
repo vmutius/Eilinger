@@ -1,28 +1,19 @@
 <div class="accordion-item">
     <h2 class="accordion-header" id="headingFinancing">
         <button type="button" class="accordion-button collapsed" data-bs-toggle="collapse"
-                data-bs-target="#collapseFinancing">{{ __('financing.title') }}
+            data-bs-target="#collapseFinancing">{{ __('financing.title') }}
         </button>
     </h2>
     <div id="collapseFinancing" class="accordion-collapse collapse">
         @if ($financing)
             <div class="card-body">
                 <div class=row>
-                    <div class="col-sm-4">
-                        <p>{{ __('financing.personal_contribution') }}: {{ $financing->personal_contribution }}</p>
-                    </div>
-                    <div class="col-sm-4">
-                        <p>{{ __('financing.netto_income') }}: {{ $financing->netto_income }}</p>
-                    </div>
-                    <div class="col-sm-4">
-                        <p>{{ __('financing.assets') }}: {{ $financing->assets }}</p>
-                    </div>
-                    <div class="col-sm-4">
-                        <p>{{ __('financing.scholarship') }}: {{ $financing->scholarship }}</p>
-                    </div>
-                    <div class="col-sm-4">
-                        <p>{{ __('financing.other_income') }}: {{ $financing->other_income }}</p>
-                    </div>
+                    <x-convert-money :amount="$financing->personal_contribution" :text="__('financing.personal_contribution')" :currency="$application->currency->abbreviation" />
+                    <x-convert-money :amount="$financing->netto_income" :text="__('financing.netto_income')" :currency="$application->currency->abbreviation" />
+                    <x-convert-money :amount="$financing->assets" :text="__('financing.assets')" :currency="$application->currency->abbreviation" />
+                    <x-convert-money :amount="$financing->scholarship" :text="__('financing.scholarship')" :currency="$application->currency->abbreviation" />
+                    <x-convert-money :amount="$financing->other_income" :text="__('financing.other_income')" :currency="$application->currency->abbreviation" />
+
                     <div class="col-sm-4">
                         <p>{{ __('financing.income_where') }}: {{ $financing->income_where }}</p>
                     </div>
@@ -31,7 +22,7 @@
                     </div>
 
                     <div class="col-12 text-end">
-                        <p>{{ __('financing.total') }} {{ $financing->total_amount_financing}}</p>
+                        <p>{{ __('financing.total') }} @convert($financing->total_amount_financing, $application->currency->abbreviation) </p>
                     </div>
                 </div>
             </div>

@@ -1,9 +1,10 @@
 <section class="home-section">
-    <h2>{{  __('antrag.title')  }}</h2>
-    <p>{{  __('antrag.text1')  }}: <a target='_blank' href="{{ route('index', app()->getLocale()) }}#our-values">{{ __('home.funding') }}</a>.</p>
-    <p>{{  __('antrag.text2')  }} </p>
+    <h2>{{ __('antrag.title') }}</h2>
+    <p>{{ __('antrag.text1') }}: <a target='_blank'
+            href="{{ route('index', app()->getLocale()) }}#our-values">{{ __('home.funding') }}</a>.</p>
+    <p>{{ __('antrag.text2') }} </p>
 
-    <p class="text-danger fw-bolder">{{  __('antrag.textSave')  }}</p>
+    <p class="text-danger fw-bolder">{{ __('antrag.textSave') }}</p>
 
 
     <div class="home-content">
